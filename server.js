@@ -62,7 +62,7 @@ const add = (n1, n2) => {
 const subtract = (n1, n2) => {
   return n1 - n2;
 }
-const product = (n1, n2) => {
+const multiply = (n1, n2) => {
   return n1 * n2;
 }
 const divide = (n1, n2) => {
@@ -98,12 +98,12 @@ app.get("/subtract", (req, res) => {
     }
   }
 });
-app.get("/product", (req, res) => {
+app.get("/multiply", (req, res) => {
   const [n1, n2] = inputval(req);
   if (n1 != null) {
     try {
-      logger.info('Parameters ' + n1 + ' and ' + n2 + ' received for product');
-      const result = product(n1, n2);
+      logger.info('Parameters ' + n1 + ' and ' + n2 + ' received for multiplication');
+      const result = multiply(n1, n2);
       res.status(200).json({ statuscode: 200, data: result });
     } catch (error) {
       console.error(error)
